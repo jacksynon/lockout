@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Auth Example
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project is a sample web application built with [Next.js](https://nextjs.org/), designed for self-practice and learning. It demonstrates the integration of various libraries and technologies to create a robust, secure, and accessible web application.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Authentication
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Auth.js**: This application uses [Auth.js](https://authjs.dev/) for managing authentication with email magic links and GitHub OAuth. Auth.js provides a straightforward and secure way to handle user authentication, supporting multiple authentication strategies including OAuth providers and passwordless login. This ensures the application is secure and can easily integrate with third-party authentication services.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### UI Components
 
-## Learn More
+- **Shadcn/UI**: The application utilizes [Shadcn/UI](https://ui.shadcn.com/) for its input and button components. Shadcn/UI offers a collection of accessible, highly customizable UI components built with modern design principles. This ensures that all UI components are fully accessible, improving the user experience for individuals with disabilities and adhering to best practices in web accessibility.
 
-To learn more about Next.js, take a look at the following resources:
+### Input Validation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Zod**: Input validation is handled by [Zod](https://zod.dev/). Zod is a powerful TypeScript-first schema declaration and validation library. It provides an intuitive way to define schemas for your data and validate inputs, reducing the risk of errors and ensuring that only valid data is processed by your application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Database Integration
 
-## Deploy on Vercel
+- **Prisma**: The application uses [Prisma](https://www.prisma.io/) as its ORM to interact with a PostgreSQL database. Prisma provides a type-safe database client with an auto-generated query builder, making database interactions straightforward and error-free. By using Prisma, you can focus on your application's logic rather than dealing with complex SQL queries, and benefit from easy migrations and data modeling.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Todo
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [x] Setup magic links for sign-in
+- [x] Setup GitHub OAuth
+- [x] Fix success magic link sent notification on log-in form component
+- [ ] Setup an additional OAuth
+- [ ] Configure register form where user enters their name and email only
+- [ ] Change default auth.js error page
+- [ ] User dashboard and profile
+- [ ] Deployment
+
+## Deployment needs
+
+- [ ] Vercel hosting for app (free)
+- [ ] Domain?
+- [ ] Resend domain config (free)
+- [ ] Postgres db hosting (supabase? free)
